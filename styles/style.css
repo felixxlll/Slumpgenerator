@@ -1,0 +1,26 @@
+.button {
+    color: black;
+    border: 1px solid black;
+    padding: 4px 6px;
+    text-decoration: none;
+    cursor: pointer;
+    background: rgb(163, 163, 163);
+}
+
+#name-list-title {
+    display: inline
+}
+
+#name-list {
+    list-style: none;
+    padding: 0;
+    border: 1px solid black;
+}
+.list-name {
+    margin: 3px 5px;
+    padding: 1px;
+    cursor: pointer;
+}
+.selected {
+    background-color: lightgrey;
+}

@@ -1,0 +1,11 @@
+när man skriver in namn, spara i lista
+när skapa grupp --> skapa dictionary med namn (index +1 varje dictionary)
+
+kategorier:
+gör grupper med X medlemmar i varje | skapa X grupper med existerande medlemmar
+
+idéer på slumpa knapp:
+1. slumpa knapp ska ha 2 event listeners som båda gör en check i början om respektive kategori är icheckad, om inte skippa
+2. slumpa knapp ska ha 1 event listener med if sats som kollar vilken kategori är checkad. (<-- bäst?)
+
+
