@@ -54,8 +54,8 @@ $('#name-delete').on("click", function(){
     }
 
     let currentListIndex = $('.selected').attr("listIndex")
-    generateList()
     nameList.splice(currentListIndex, 1)
+    generateList()
 })
 
 //
@@ -69,8 +69,8 @@ $(document).on('click','.list-name',function(){
 
 // Makes groups selectable
 $('.group-selector').click(function(){
-    $('.group-selector').removeClass(" selected-group ") // Removes selected-group class from other group options
-    $(this).addClass(" selected-group ") // Adds selected-group class to clicked group option
+    $('.group-selector').removeClass("selected-group") // Removes selected-group class from other group options
+    $(this).addClass("selected-group") // Adds selected-group class to clicked group option
 })
 
 $("#group-add").click(function(){
@@ -80,5 +80,20 @@ $("#group-add").click(function(){
 
 $("#group-subtract").click(function(){
     let currentValue = parseInt($("#group-amount").val())
+    if (currentValue <= 1) {
+        return
+    }
     $("#group-amount").val(currentValue - 1)
 })
+
+$('#group-slump').click(function(){
+    if ($('#xGroups').hasClass('selected-group')) {
+        console.log("grupper")
+        alert("hej")
+    }
+    else if ($('#xNames').hasClass('selected-group')) {
+        console.log("namn") 
+        alert("hej")
+    }
+})
+

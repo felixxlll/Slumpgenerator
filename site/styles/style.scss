@@ -3,6 +3,10 @@
 
 $selectedBackground: #999999;
 
+* {
+    font-family: Arial;
+}
+
 .button, .group-selector {
     color: black;
     border: 1px solid black;
@@ -32,4 +36,32 @@ $selectedBackground: #999999;
 
 #group-amount-form {
     margin-top: 5px;
+}
+
+#groups {
+    display: flex;
+    flex-wrap: wrap;
+
+    .group {
+        border: 1px solid black;
+        max-width: 150px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        h4 {
+            margin: 10px;
+        }
+        .group-names {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            p {
+                font-size: 10px;
+                margin: 5px;
+            }
+        }
+    }
 }
