@@ -1,10 +1,15 @@
+---
+---
+
+$selectedBackground: #999999;
+
 .button, .group-selector {
     color: black;
     border: 1px solid black;
     padding: 4px 6px;
     text-decoration: none;
     cursor: pointer;
-    background: rgb(163, 163, 163);
+    background: rgba(211, 211, 211, 0.692);
 }
 
 #name-list-title {
@@ -22,7 +27,7 @@
     cursor: pointer;
 }
 .selected, .selected-group {
-    background-color: lightgrey;
+    background-color: $selectedBackground;
 }
 
 #group-amount-form {
