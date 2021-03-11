@@ -1,3 +1,7 @@
+//
+// NAMES
+//
+
 let nameList = []
 
 // Prevents page reload on form submit
@@ -67,4 +71,14 @@ $(document).on('click','.list-name',function(){
 $('.group-selector').click(function(){
     $('.group-selector').removeClass(" selected-group ") // Removes selected-group class from other group options
     $(this).addClass(" selected-group ") // Adds selected-group class to clicked group option
+})
+
+$("#group-add").click(function(){
+    let currentValue = parseInt($("#group-amount").val())
+    $("#group-amount").val(currentValue + 1)
+})
+
+$("#group-subtract").click(function(){
+    let currentValue = parseInt($("#group-amount").val())
+    $("#group-amount").val(currentValue - 1)
 })
