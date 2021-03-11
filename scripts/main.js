@@ -5,6 +5,16 @@ $('form').submit(function (e) {
     e.preventDefault();
 });
 
+// Generates / Refreshes the list of names
+function generateList() {
+    $('#name-list').empty() // Clears ul element so it can be refilled after
+    let listIndex = 0
+    $(nameList).each(function(index, element){ // Iterates through list to add every list item in ul element
+        $('#name-list').append("<li class='list-name' listIndex='" + listIndex + "'>" + element + "</li>")
+        listIndex += 1
+    })
+}
+
 // Adds name and displays it the on list on the page
 $('#name-submit').click(function() {
     // Prevents empty list items
@@ -16,14 +26,7 @@ $('#name-submit').click(function() {
     $('#name-input').val('') // Clears input
 
     nameList.push(currentValue) // Adds input value to list
-    
-
-    $('#name-list').empty() // Clears ul element so it can be refilled after
-    let listIndex = 0
-    $(nameList).each(function(index, element){ // Iterates through list to add every list item in ul element
-        $('#name-list').append("<li class='list-name' listIndex='" + listIndex + "'>" + element + "</li>")
-        listIndex += 1
-    })
+    generateList()
 })
 
 // Removes all names and clears list
@@ -39,7 +42,7 @@ $(document).on('click','.list-name',function(){
     $(this).addClass(" selected ") // Adds selected class to clicked list item
 })
 
-// Removes selected name and removes it from the list
+// Removes selected name
 $('#name-delete').on("click", function(){
     let amountSelected = $('.selected').length
     if (amountSelected == 0) {
@@ -47,7 +50,7 @@ $('#name-delete').on("click", function(){
     }
 
     let currentListIndex = $('.selected').attr("listIndex")
-    $('.selected').remove()
+    generateList()
     nameList.splice(currentListIndex, 1)
 })
 
