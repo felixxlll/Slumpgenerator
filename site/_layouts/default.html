@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
+    <!-- {% include nameGen.html %} -->
+    <!-- {% include groupGen.html %} -->
     <form>
         <input id="name-input" type="text">
         <button type="submit" class="button" id="name-submit">Lägg till</button>
@@ -15,8 +17,8 @@
     <br>
     <div>
         <p id="name-list-title">Namn:</p>
-        <button href="#" class="button" id="name-clear">Ta bort allt</button>
-        <button href="#" class="button" id="name-delete">Ta bort individ</button>
+        <button class="button" id="name-clear">Ta bort allt</button>
+        <button class="button" id="name-delete">Ta bort individ</button>
         <ul id="name-list"></ul>
     </div>
 
@@ -30,6 +32,8 @@
             <button id="group-subtract" class="group-button button">-</button>
             <button id="group-add" class="group-button button">+</button>
         </form>
+
+        <button id="group-slump" class="button">Slumpa fram grupper</button>
     </div>
     <script src="scripts/jquery-3.5.1.min.js"></script>
     <script src="scripts/main.js"></script>
