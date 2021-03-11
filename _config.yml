@@ -1,0 +1,6 @@
+source: site
+
+collections:
+  info:
+    output: true
+    
