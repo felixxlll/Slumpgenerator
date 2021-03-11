@@ -54,5 +54,17 @@ $('#name-delete').on("click", function(){
     nameList.splice(currentListIndex, 1)
 })
 
+//
+// GROUPS
+//
 
+$(document).on('click','.list-name',function(){
+    $('.list-name').removeClass(" selected ") // Removes selected class from all list items
+    $(this).addClass(" selected ") // Adds selected class to clicked list item
+})
 
+// Makes groups selectable
+$('.group-selector').click(function(){
+    $('.group-selector').removeClass(" selected-group ") // Removes selected-group class from other group options
+    $(this).addClass(" selected-group ") // Adds selected-group class to clicked group option
+})
