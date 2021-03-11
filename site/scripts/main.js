@@ -54,8 +54,8 @@ $('#name-delete').on("click", function(){
     }
 
     let currentListIndex = $('.selected').attr("listIndex")
-    generateList()
     nameList.splice(currentListIndex, 1)
+    generateList()
 })
 
 //
@@ -80,5 +80,8 @@ $("#group-add").click(function(){
 
 $("#group-subtract").click(function(){
     let currentValue = parseInt($("#group-amount").val())
+    if (currentValue <= 1) {
+        return
+    }
     $("#group-amount").val(currentValue - 1)
 })
