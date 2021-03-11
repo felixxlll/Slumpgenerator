@@ -3,8 +3,10 @@
 
 $selectedBackground: #999999;
 
-* {
-    font-family: Arial;
+h1 {
+    a {
+        color: black;           
+    }
 }
 
 .button, .group-selector {
@@ -30,8 +32,12 @@ $selectedBackground: #999999;
     padding: 1px;
     cursor: pointer;
 }
-.selected, .selected-group {
+.selected {
     background-color: $selectedBackground;
+}
+
+.selected-group {
+    background-color: #bcff7d;
 }
 
 #group-amount-form {
@@ -41,6 +47,7 @@ $selectedBackground: #999999;
 #groups {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
 
     .group {
         border: 1px solid black;
@@ -60,7 +67,7 @@ $selectedBackground: #999999;
             justify-content: center;
             align-items: center;
             p {
-                font-size: 15px;
+                font-size: 14px;
                 margin: 7px;
             }
         }

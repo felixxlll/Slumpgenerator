@@ -15,8 +15,9 @@ function generateList() {
     let listIndex = 0
     $(nameList).each(function(index, element){ // Iterates through list to add every list item in ul element
         $('#name-list').append("<li class='list-name' listIndex='" + listIndex + "'>" + element + "</li>")
-        listIndex += 1
+        listIndex++
     })
+    $('#name-amount').text(nameList.length)
 }
 
 // Adds name and displays it the on list on the page
@@ -36,7 +37,7 @@ $('#name-submit').click(function() {
 // Removes all names and clears list
 $('#name-clear').click(function() {
     nameList = []
-    $('#name-list').empty() // Clears ul element
+    generateList()
 })
 
 // Makes list items selectable
@@ -86,27 +87,93 @@ $("#group-subtract").click(function(){
     $("#group-amount").val(currentValue - 1)
 })
 
+function createGroup() {
+    groupCount++
+    $('#groups').append("<div class='group'><h4>Grupp "+ groupCount +"</h4><div class='group-names group"+ groupCount +"'></div></div>")
+}
+
+let groupCount
+let slumpList
+
+function slumpXGroups() {
+    slumpList = nameList // Copies nameList to preserve names
+    $('#groups').empty()
+
+    let groupInputValue = parseInt($("#group-amount").val()) // Value in the user input
+    let nameAmount = slumpList.length // Amount of names entered
+    groupCount = 0 // Used in createGroup() function
+    let currentName
+
+    // Creates desired amount of groups by repeatedly calling the createGroup() function
+    while (groupCount < groupInputValue) {
+        createGroup()
+    }
+    
+    let groupIndex = 1
+    while (nameAmount > 0) {
+        nameIndex = Math.floor((Math.random() * nameAmount))
+        currentName = slumpList[nameIndex]
+        slumpList.splice(nameIndex, 1)
+
+        nameAmount--
+
+        $('.group'+ groupIndex +'').append("<p class='name'>"+ currentName +"</p>")
+        groupIndex++
+
+        if (groupIndex > groupInputValue) {
+            groupIndex = 1
+        }
+
+    }
+
+    generateList()
+}
+
+function slumpXMembersPerGroup() {
+    slumpList = nameList // Copies nameList to preserve names
+    $('#groups').empty()
+
+    let groupInputValue = parseInt($("#group-amount").val()) // Value in the user input
+    let nameAmount = slumpList.length // Amount of names entered
+    groupCount = 0 // Used in createGroup() function
+    let currentName
+
+    let desiredAmountOfGroups = nameAmount / groupInputValue // Calculates desired amount of groups
+    desiredAmountOfGroups = Math.ceil(desiredAmountOfGroups)
+
+    // Creates desired amount of groups by repeatedly calling the createGroup() function
+    for (i = 0; i < desiredAmountOfGroups; i++) {
+        createGroup()
+    }
+
+    let groupIndex = 1
+    while (nameAmount > 0) {
+        nameIndex = Math.floor((Math.random() * nameAmount))
+        currentName = slumpList[nameIndex]
+        slumpList.splice(nameIndex, 1)
+
+        nameAmount--
+
+        $('.group'+ groupIndex +'').append("<p class='name'>"+ currentName +"</p>")
+        groupIndex++
+
+        if (groupIndex > desiredAmountOfGroups) {
+            groupIndex = 1
+        }
+
+    }
+
+
+    generateList()
+}
+
 $('#group-slump').click(function(){
     if ($('#xGroups').hasClass('selected-group')) {
         console.log("grupper") // DEBUG
-        // alert("x grupper") // DEBUG
+        slumpXGroups()
     }
     else if ($('#xNames').hasClass('selected-group')) {
         console.log("namn") // DEBUG
-        // alert("x medlemmar") // DEBUG
+        slumpXMembersPerGroup()
     }
-
-    createGroup()
 })
-
-let groupCount = 0
-function createGroup() {
-    groupCount += 1
-    $('#groups').append("<div class='group'><h4>Group"+ groupCount +"</h4><div class='group-names group"+ groupCount +"'>")
-
-    $(nameList).each(function(index, element){ // Iterates through list to add every list item in ul element
-        $('.group'+ groupCount +'').append("<p class='name'>"+ element +"</p>")
-    })
-
-    $('#groups').append("</div></div>")
-}
