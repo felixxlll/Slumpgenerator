@@ -88,12 +88,25 @@ $("#group-subtract").click(function(){
 
 $('#group-slump').click(function(){
     if ($('#xGroups').hasClass('selected-group')) {
-        console.log("grupper")
-        alert("hej")
+        console.log("grupper") // DEBUG
+        // alert("x grupper") // DEBUG
     }
     else if ($('#xNames').hasClass('selected-group')) {
-        console.log("namn") 
-        alert("hej")
+        console.log("namn") // DEBUG
+        // alert("x medlemmar") // DEBUG
     }
+
+    createGroup()
 })
 
+let groupCount = 0
+function createGroup() {
+    groupCount += 1
+    $('#groups').append("<div class='group'><h4>Group"+ groupCount +"</h4><div class='group-names group"+ groupCount +"'>")
+
+    $(nameList).each(function(index, element){ // Iterates through list to add every list item in ul element
+        $('.group'+ groupCount +'').append("<p class='name'>"+ element +"</p>")
+    })
+
+    $('#groups').append("</div></div>")
+}
