@@ -1,4 +1,4 @@
-.button {
+.button, .group-selector {
     color: black;
     border: 1px solid black;
     padding: 4px 6px;
@@ -21,6 +21,10 @@
     padding: 1px;
     cursor: pointer;
 }
-.selected {
+.selected, .selected-group {
     background-color: lightgrey;
+}
+
+#group-amount-form {
+    margin-top: 5px;
 }
