@@ -59,11 +59,13 @@ h2 {
     margin-top: 5px;
 }
 
+// Wrapper for .group divs
 #groups {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 
+    // Main div for each individual group
     .group {
         border: 1px solid black;
         max-width: 200px;
@@ -72,15 +74,21 @@ h2 {
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+
+        // Group title
         h4 {
             margin: 10px;
             font-size: 17px;
         }
+
+        // Groups names wrapper
         .group-names {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
+
+            // Names in group
             p {
                 font-size: 14px;
                 margin: 7px;
