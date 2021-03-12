@@ -19,50 +19,10 @@
         </h1>
         
     </div>
-    <div class="container mt-5">
 
-        <form class="my-3">
-            <input id="name-input" type="text">
-            <button type="submit" class="button" id="name-submit">Lägg till</button>
-        </form>
-        <div>
-            <div class="my-3">
-                <p id="name-list-title">Namn:</p>
-                <button class="button" id="name-clear">Ta bort allt</button>
-                <button class="button" id="name-delete">Ta bort individ</button>
-                <p id="name-amount" class="d-inline border border-dark px-2 py-1">0</p>
-            </div>
-            <ul id="name-list" class="col-3 my-3"></ul>
-        </div>
-    </div>
+    {% include nameGen.html %}
+    {% include groupGen.html %}
 
-    <div class="container">
-        <h2>Grupptyp</h2>
-        <div id="xGroups" class="group-selector selected-group">Slumpa X grupper</div>
-        <div id="xNames" class="group-selector">Slumpa grupper med X medlemmar</div>
-
-        <form id="group-amount-form">
-            <input id="group-amount" type="number" value="2">
-            <button id="group-subtract" class="group-button button">-</button>
-            <button id="group-add" class="group-button button">+</button>
-        </form>
-
-        <button id="group-slump" class="button">Slumpa fram grupper</button>
-    </div>
-    <div class="container">
-        <h2 class="text-center">Grupper</h2>
-        <div id="groups">
-            <div class="group">
-                <h4>Grupp 0</h4>
-                <div class="group-names">
-                    <p>Namn 1</p>
-                    <p>Namn 2</p>
-                    <p>Namn 3</p>
-                    <p>Namn 4</p>
-                </div>
-            </div>
-        </div>    
-    </div>
 
     <script src="scripts/jquery-3.5.1.min.js"></script>
     <script src="scripts/bootstrap.bundle.min.js"></script>
