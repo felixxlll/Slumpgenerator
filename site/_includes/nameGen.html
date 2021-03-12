@@ -1,16 +1,20 @@
-<div class="container mt-5">
-
-    <form class="my-3">
-        <input id="name-input" type="text">
-        <button type="submit" class="button" id="name-submit">Lägg till</button>
-    </form>
-    <div>
-        <div class="my-3">
-            <p id="name-list-title">Namn:</p>
-            <button class="button" id="name-clear">Ta bort allt</button>
-            <button class="button" id="name-delete">Ta bort individ</button>
-            <p id="name-amount" class="d-inline border border-dark px-2 py-1">0</p>
+<div class="container d-flex flex-column justify-content-center">
+    <h2>Namn</h2>
+    <div id="name-list-wrapper">
+        <div>
+            <form class="mr-3">
+                <p id="name-amount">0</p>
+                <input id="name-input" type="text">
+                <button type="submit" class="button" id="name-submit">Lägg till</button>
+            </form>
+            <div id="name-list-button-wrapper" class="my-3 mr-3">
+                <button class="button name-button" id="name-clear">Ta bort allt</button>
+                <button class="button name-button" id="name-delete">Ta bort individ</button>
+            </div>
         </div>
-        <ul id="name-list" class="col-3 my-3"></ul>
+    
+        <div class="mr-3">
+            <ul id="name-list"></ul>
+        </div>
     </div>
 </div>

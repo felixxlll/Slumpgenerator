@@ -25,31 +25,60 @@ h2 {
     cursor: pointer;
     background: rgba(211, 211, 211, 0.692);
 }
+.group-selector {
+    max-width: 260px;
+}
+.group-selector:nth-of-type(2) {
+    border-top: none
+}
+
+.name-button:nth-of-type(2) {
+    border-top: none;
+}
 
 #name-list-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+#name-list-button-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+#name-list-title {
+    display: inline
+}
+#name-list {
+    list-style: none;
+    padding: 3px;
+    border: 1px solid black;
+    overflow-y: scroll;
 
+    min-width: 200px;
+    min-height: 180px;
+    max-height: 500px;
 
-    div {
-        #name-list-title {
-            display: inline
-        }
+    // Names entered by the user
+    .list-name { 
+        margin: 3px 5px;
+        padding: 1px;
+        cursor: pointer;
     }
-    #name-list {
-        list-style: none;
-        padding: 0;
-        border: 1px solid black;
-
-        // Names entered by the user
-        .list-name { 
-            margin: 3px 5px;
-            padding: 1px;
-            cursor: pointer;
-        }
-        .selected {
-            background-color: $selectedBackground;
-        }
+    .selected {
+        background-color: $selectedBackground;
     }
 }
+#name-amount {
+    border: 1px solid black;
+    // border-left: none;
+    padding: 4px 6px;
+
+    background: rgba(211, 211, 211, 0.692);
+}
+
+//
+// GROUPS
+// Some button related css is still up above
+//
 
 .selected-group {
     background-color: #bcff7d;
@@ -63,7 +92,6 @@ h2 {
 #groups {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
 
     // Main div for each individual group
     .group {

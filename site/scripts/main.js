@@ -23,7 +23,7 @@ function generateList() {
 // Adds name and displays it the on list on the page
 $('#name-submit').click(function() {
     // Prevents empty list items
-    if($('#name-input').val() == ''){
+    if( $.trim( $('#name-input').val() ) == '' ){
         return
     }
 
@@ -89,7 +89,7 @@ $("#group-subtract").click(function(){
 
 function createGroup() {
     groupCount++
-    $('#groups').append("<div class='group'><h4>Grupp "+ groupCount +"</h4><div class='group-names group"+ groupCount +"'></div></div>")
+    $('#groups').append("<div class='group m-3'><h4>Grupp "+ groupCount +"</h4><div class='group-names group"+ groupCount +"'></div></div>")
 }
 
 let groupCount
