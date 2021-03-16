@@ -1,7 +1,7 @@
 <div class="container">
     <h2>Inställningar</h2>
-    <div id="options" class="d-flex justify-content-start flex-wrap p-2 border">
-        <div class="p-2 border">
+    <div id="options" class="d-flex justify-content-start flex-wrap border">
+        <div class="p-2 m-2 border">
             <h3>Slumpalternativ:</h3>
             <div id="xGroups" class="group-selector selected-group">- Slumpa X grupper</div>
             <div id="xNames" class="group-selector">- Slumpa grupper med X medlemmar</div>
@@ -11,6 +11,13 @@
                     <button id="group-subtract" class="group-button button ml-1">-</button>
                     <button id="group-add" class="group-button button ml-1">+</button>
                 </div>
+            </form>
+        </div>
+        <div class="p-2 m-2 border">
+            <h3>Annat:</h3>
+            <form id="group-leader-form" class="border bg-light px-2 py-1" data-toggle="tooltip" data-placement="auto" title="En slumpvald person i varje grupp blir markerad som ledare">
+                <input type="checkbox" id="group-leader-checkbox">
+                <label for="group-leader-form">Grupp ledare</label>
             </form>
         </div>
     </div>
