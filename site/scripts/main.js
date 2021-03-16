@@ -96,7 +96,7 @@ let groupCount
 let slumpList
 
 function slumpXGroups() {
-    slumpList = nameList // Copies nameList to preserve names
+    slumpList = nameList.slice() // Copies nameList to preserve names
     $('#groups').empty()
 
     let groupInputValue = parseInt($("#group-amount").val()) // Value in the user input
@@ -130,7 +130,7 @@ function slumpXGroups() {
 }
 
 function slumpXMembersPerGroup() {
-    slumpList = nameList // Copies nameList to preserve names
+    slumpList = nameList.slice() // Copies nameList to preserve names
     $('#groups').empty()
 
     let groupInputValue = parseInt($("#group-amount").val()) // Value in the user input
@@ -169,11 +169,9 @@ function slumpXMembersPerGroup() {
 
 $('#group-slump').click(function(){
     if ($('#xGroups').hasClass('selected-group')) {
-        console.log("grupper") // DEBUG
         slumpXGroups()
     }
     else if ($('#xNames').hasClass('selected-group')) {
-        console.log("namn") // DEBUG
         slumpXMembersPerGroup()
     }
 })
