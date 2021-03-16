@@ -22,3 +22,8 @@ Jekyll workflow för att publisha sidan på Github pages
 
 Ta bort upp och ner pilarna från Grupp inputten
 
+Översätta --> Engelska
+Darkmode
+
+Flytta slumpa knapp från inställningar -- OTYDLIGT
+

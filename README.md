@@ -1,6 +1,8 @@
 # Slumpgenerator
 A tool for generating random groups
 
+The site can be found here: https://felixxlll.github.io/Slumpgenerator/
+
 ## Running website locally
 ### You must have Ruby and Jekyll installed for these commands to work
 
