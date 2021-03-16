@@ -1,14 +1,19 @@
 <div class="container">
     <h2>Inställningar</h2>
-    <h3>Slumpalternativ</h3>
-    <div id="xGroups" class="group-selector selected-group">Slumpa X grupper</div>
-    <div id="xNames" class="group-selector">Slumpa grupper med X medlemmar</div>
+    <div id="options" class="d-flex justify-content-start flex-wrap p-2 border">
+        <div class="p-2 border">
+            <h3>Slumpalternativ:</h3>
+            <div id="xGroups" class="group-selector selected-group">- Slumpa X grupper</div>
+            <div id="xNames" class="group-selector">- Slumpa grupper med X medlemmar</div>
+            <form id="group-amount-form" class="d-flex justify-content-between">
+                <input id="group-amount" type="number" value="2">
+                <div class="d-inline-flex justify-content-around">
+                    <button id="group-subtract" class="group-button button ml-1">-</button>
+                    <button id="group-add" class="group-button button ml-1">+</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
-    <form id="group-amount-form">
-        <input id="group-amount" type="number" value="2">
-        <button id="group-subtract" class="group-button button">-</button>
-        <button id="group-add" class="group-button button">+</button>
-    </form>
-
-    <button id="group-slump" class="button">Slumpa fram grupper</button>
+    <button id="group-slump" class="button my-3 p-3">Slumpa fram grupper</button>
 </div>

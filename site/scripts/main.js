@@ -17,7 +17,7 @@ function generateList() {
         $('#name-list').append("<li class='list-name' listIndex='" + listIndex + "'>" + element + "</li>")
         listIndex++
     })
-    $('#name-amount').text(nameList.length)
+    $('#name-amount').text("Antal: " + nameList.length)
 }
 
 // Adds name and displays it the on list on the page

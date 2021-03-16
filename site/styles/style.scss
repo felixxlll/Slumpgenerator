@@ -25,6 +25,9 @@ h2 {
     cursor: pointer;
     background: rgba(211, 211, 211, 0.692);
 }
+.group-button {
+    min-width: 22px
+}
 .group-selector {
     max-width: 260px;
 }
@@ -71,8 +74,6 @@ h2 {
     border: 1px solid black;
     // border-left: none;
     padding: 4px 6px;
-
-    background: rgba(211, 211, 211, 0.692);
 }
 
 //
