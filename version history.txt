@@ -1,4 +1,0 @@
-v.1.0.4
-- Added version text under h1
-- Changed "Ta bort individ" text to "Ta bort markerad"
-- Added option to randomize a group leader for each group along with a bootstrap tooltip describing its functionality to users
