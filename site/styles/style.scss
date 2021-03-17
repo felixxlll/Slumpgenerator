@@ -13,8 +13,9 @@ h1 {
     }
 }
 
-h2 {
-
+#version {
+    margin-top: -45px;
+    font-size: 30px;
 }
 
 .button, .group-selector {
@@ -121,6 +122,9 @@ h2 {
             p {
                 font-size: 14px;
                 margin: 7px;
+            }
+            .groupLeader {
+                background-color: $selectedBackground;
             }
         }
     }

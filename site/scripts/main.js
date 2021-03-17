@@ -181,11 +181,33 @@ function slumpXMembersPerGroup() {
     generateList()
 }
 
+// This function is used for randomizing a group leader
+function selectGroupLeader() {
+    let groupList = $('#groups').children()
+
+    $(groupList).each(function(index, element) {
+        actualGroup = $(this).find('.group-names')
+        names = actualGroup.children
+        // names = Array.from(actualGroup.children).map
+        console.log(names.length)
+
+        test = $('.group2').children
+
+        
+    })
+    alert("hej") // DEBUG
+}
+
+// This is called upon when slump button is clicked
 $('#group-slump').click(function(){
     if ($('#xGroups').hasClass('selected-group')) {
         slumpXGroups()
     }
     else if ($('#xNames').hasClass('selected-group')) {
         slumpXMembersPerGroup()
+    }
+
+    if ($('#group-leader-checkbox').is(':checked')) { // Generates group leaders if group leader checkbox is checked
+        selectGroupLeader()
     }
 })
