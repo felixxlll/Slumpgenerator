@@ -1,3 +1,7 @@
+$(document).ready(function() {
+    $('[data-toggle="tooltip"]').tooltip()
+})
+
 //
 // NAMES
 //
@@ -14,7 +18,7 @@ function generateList() {
     $('#name-list').empty() // Clears ul element so it can be refilled after
     let listIndex = 0
     $(nameList).each(function(index, element){ // Iterates through list to add every list item in ul element
-        $('#name-list').append("<li class='list-name' listIndex='" + listIndex + "'>" + element + "</li>")
+        $('#name-list').append("<li class='list-name' contentEditable='true' listIndex='" + listIndex + "'>" + element + "</li>")
         listIndex++
     })
     $('#name-amount').text("Antal: " + nameList.length)
@@ -40,11 +44,21 @@ $('#name-clear').click(function() {
     generateList()
 })
 
-// Makes list items selectable
+let selectedNameIndex
+
+// Selects list items when clicked
 // Needed for delete button
 $(document).on('click','.list-name',function(){
     $('.list-name').removeClass(" selected ") // Removes selected class from all list items
     $(this).addClass(" selected ") // Adds selected class to clicked list item
+
+    selectedNameIndex = $(this).attr("listIndex") // Gets listIndex attribute for use when changing name values
+})
+
+
+// Updates nameList items when their names are changed
+$(document).on('input','.list-name',function(){
+    nameList[selectedNameIndex] = $('.selected').text() // Gets text of selected element
 })
 
 // Removes selected name
