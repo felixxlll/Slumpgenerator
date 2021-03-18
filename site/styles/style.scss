@@ -132,9 +132,17 @@ h1 {
                 font-size: 14px;
                 margin: 7px;
             }
-            .groupLeader {
+            .group-leader {
                 background-color: $selectedBackground;
             }
         }
+    }
+}
+#group-leader-form {
+    min-width: 10rem;
+
+    #group-leader-checkbox {
+
+
     }
 }
