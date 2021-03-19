@@ -1,7 +1,7 @@
 ---
 ---
 
-$selectedBackground: #999999;
+$selectedBackground: #bbbbbb;
 
 * {
     font-family: 'Kavivanar', cursive;
@@ -64,7 +64,7 @@ h1 {
     // Names entered by the user
     .list-name { 
         margin: 3px 5px;
-        padding: 1px;
+        padding: 3px;
         cursor: pointer;
     }
     .selected {
@@ -140,9 +140,13 @@ h1 {
 }
 #group-leader-form {
     min-width: 10rem;
+    padding: 5px;
+    
 
     #group-leader-checkbox {
-
+        position: relative !important;
+        display: inline-block !important;
+        margin: 0;
 
     }
 }
