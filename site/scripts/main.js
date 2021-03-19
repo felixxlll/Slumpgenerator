@@ -101,10 +101,16 @@ $("#group-subtract").click(function(){
     $("#group-amount").val(currentValue - 1)
 })
 
+// This function is called upon to create groups
 function createGroup() {
     groupCount++
     $('#groups').append("<div class='group m-3'><h4>Grupp "+ groupCount +"</h4><div class='group-names group"+ groupCount +"'></div></div>")
 }
+
+//
+// GROUP OPTIONS START
+// Everything under is related to the options menu
+//
 
 let groupCount
 let slumpList
@@ -131,7 +137,7 @@ function slumpXGroups() {
 
         nameAmount--
 
-        $('.group'+ groupIndex +'').append("<p class='name'>"+ currentName +"</p>")
+        $('.group'+ groupIndex +'').append("<p class='name px-1'>"+ currentName +"</p>")
         groupIndex++
 
         if (groupIndex > groupInputValue) {
@@ -181,11 +187,29 @@ function slumpXMembersPerGroup() {
     generateList()
 }
 
+// This function is used for randomizing a group leader
+function selectGroupLeader() {
+    let groupList = $('#groups').children()
+
+    $(groupList).each(function(index, element) {
+        actualGroup = $(this).find('.group-names')
+        names = actualGroup.children()
+
+        groupLeader = names[Math.floor((Math.random() * names.length))]
+        $(groupLeader).addClass('group-leader')
+    })
+}
+
+// This is called upon when slump button is clicked
 $('#group-slump').click(function(){
     if ($('#xGroups').hasClass('selected-group')) {
         slumpXGroups()
     }
     else if ($('#xNames').hasClass('selected-group')) {
         slumpXMembersPerGroup()
+    }
+
+    if ($('#group-leader-checkbox').is(':checked')) { // Generates group leaders if group leader checkbox is checked
+        selectGroupLeader()
     }
 })
