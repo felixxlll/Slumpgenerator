@@ -209,7 +209,9 @@ $('#group-slump').click(function(){
         slumpXMembersPerGroup()
     }
 
+    // If more options to "Annat" gets added this could be converted into a switch statement that checks if the checkboxes are checked
     if ($('#group-leader-checkbox').is(':checked')) { // Generates group leaders if group leader checkbox is checked
         selectGroupLeader()
     }
+    
 })

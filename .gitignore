@@ -3,7 +3,10 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
-#Jekyll
+# VSCode
+.vscode/
+
+# Jekyll
 _site
 .sass-cache
 .jekyll-cache
