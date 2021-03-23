@@ -1,16 +1,102 @@
 ---
 ---
 
-$selectedBackground: #bbbbbb;
+// Colors - Start
+
+$backgroundLight: #ffffff;
+$selectedGroupLight: #bcff7d;
+$selectedBackgroundLight: rgb(186, 186, 186);
+$buttonBackgroundLight: rgba(211, 211, 211, 0.7);
+$borderColorLight: #000000;
+$textColorLight: #000000;
+
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: $backgroundLight;
+    }
+    * {
+        color: $textColorLight;
+    }
+    h1 {
+        a {
+            color: $textColorLight
+        }
+    }
+    .button, .group-selector {
+        border-color: $borderColorLight;
+        border-color: $borderColorLight;
+        background-color: $buttonBackgroundLight;
+    }
+    #name-list {
+        border-color: $borderColorLight;
+
+        .selected {
+            background-color: $selectedBackgroundLight;
+        }
+    }
+    #name-amount {
+        border-color: $borderColorLight;
+    }
+    .group-leader {
+        background-color: $selectedBackgroundLight;
+    }
+    .selected-group {
+        background-color: $selectedGroupLight;
+    }
+    .group {
+        border-color: $borderColorLight;
+    }
+}
+
+$backgroundDark: #121212;
+$selectedGroupDark: #7cd32b;
+$selectedBackgroundDark: rgb(75, 75, 75);
+$buttonBackgroundDark: rgba(44, 44, 44, 0.7);
+$borderColorDark: #ffffff;
+$textColorDark: #ffffff;
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: $backgroundDark;
+    }
+    * {
+        color: $textColorDark;
+    }
+    h1 {
+        a {
+            color: $textColorDark
+        }
+    }
+    .button, .group-selector {
+        color: $textColorDark;
+        border-color: $borderColorDark;
+        background-color: $buttonBackgroundDark;
+    }
+    #name-list {
+        border-color: $borderColorDark;
+
+        .selected {
+            background-color: $selectedBackgroundDark;
+        }
+    }
+    #name-amount {
+        border-color: $borderColorDark;
+    }
+    .group-leader {
+        background-color: $selectedBackgroundDark;
+    }
+    .selected-group {
+        background-color: $selectedGroupDark;
+    }
+    .group {
+        border-color: $borderColorDark;
+    }
+}
+
+// Colors - End
 
 * {
     font-family: 'Kavivanar', cursive;
-}
-
-h1 {
-    a {
-        color: black;           
-    }
 }
 
 #version {
@@ -19,12 +105,10 @@ h1 {
 }
 
 .button, .group-selector {
-    color: black;
-    border: 1px solid black;
+    border: 1px solid;
     padding: 4px 6px;
     text-decoration: none;
     cursor: pointer;
-    background: rgba(211, 211, 211, 0.692);
 }
 .group-button {
     min-width: 22px
@@ -54,7 +138,7 @@ h1 {
 #name-list {
     list-style: none;
     padding: 3px;
-    border: 1px solid black;
+    border: 1px solid;
     overflow-y: scroll;
 
     min-width: 200px;
@@ -67,12 +151,9 @@ h1 {
         padding: 3px;
         cursor: pointer;
     }
-    .selected {
-        background-color: $selectedBackground;
-    }
 }
 #name-amount {
-    border: 1px solid black;
+    border: 1px solid;
     padding: 4px 6px;
 }
 
@@ -80,10 +161,6 @@ h1 {
 // GROUPS
 // Some button related css is still up above
 //
-
-.selected-group {
-    background-color: #bcff7d;
-}
 
 #group-amount-form {
     margin-top: 5px;
@@ -106,7 +183,7 @@ h1 {
 
     // Main div for each individual group
     .group {
-        border: 1px solid black;
+        border: 1px solid;
         max-width: 200px;
 
         display: flex;
@@ -131,9 +208,6 @@ h1 {
             p {
                 font-size: 14px;
                 margin: 7px;
-            }
-            .group-leader {
-                background-color: $selectedBackground;
             }
         }
     }
